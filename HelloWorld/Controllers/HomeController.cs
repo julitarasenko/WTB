@@ -5,12 +5,20 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using HelloWorld.Models;
 
-namespace TailSpin.SpaceGame.Web.Controllers
+namespace HelloWorld.Controllers
 {
     public class HomeController : Controller
     {
+        // High score repository.
+        private readonly IDocumentDBRepository<Score> _scoreRepository;
+        // User profile repository.
+        private readonly IDocumentDBRepository<Profile> _profileRespository;
+
         public HomeController(
+            IDocumentDBRepository<Score> scoreRepository,
+            IDocumentDBRepository<Profile> profileRespository
             )
         {
             _scoreRepository = scoreRepository;
