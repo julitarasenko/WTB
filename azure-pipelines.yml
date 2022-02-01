@@ -24,19 +24,3 @@ steps:
   displayName: 'Run npm install'
   inputs:
     verbose: false
-
-- task: gulp@1
-  displayName: 'Run gulp tasks'
-
-- task: DotNetCoreCLI@2
-  displayName: 'Restore project dependencies'
-  inputs:
-    command: 'restore'
-    projects: '**/*.csproj'
-
-- task: DotNetCoreCLI@2
-  displayName: 'Build the project - Release'
-  inputs:
-    command: 'build'
-    arguments: '--no-restore --configuration Release'
-    projects: '**/*.csproj'
