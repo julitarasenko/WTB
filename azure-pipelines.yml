@@ -13,7 +13,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  wwwrootDir: 'WTB'
+  wwwrootDir: 'HelloWorld/wwwroot'
   dotnetSdkVersion: '5.x'
 
 steps:
